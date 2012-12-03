@@ -17,7 +17,6 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tickets<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li>{{ HTML::link_to_action( 'ticket/add', 'Add' ) }}</li>
-              <li>{{ HTML::link_to_action( 'ticket/modify', 'Modify' ) }}</li>
               <li>{{ HTML::link_to_action( 'ticket/index', 'List all' ) }}</li>
               <li class="divider"></li>
               <li class="nav-header">Nav header</li>
@@ -32,7 +31,6 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>{{ HTML::link_to_action( 'user/add', 'Add' ) }}</li>
-                <li>{{ HTML::link_to_action( 'user/modify', 'Modify' ) }}</li>
                 <li>{{ HTML::link_to_action( 'user/index', 'List all' ) }}</li>
                 <li class="divider"></li>
                 <li class="nav-header">Nav header</li>
@@ -45,7 +43,6 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>{{ HTML::link_to_action( 'group/add', 'Add' ) }}</li>
-                <li>{{ HTML::link_to_action( 'group/modify', 'Modify' ) }}</li>
                 <li>{{ HTML::link_to_action( 'group', 'List all' ) }}</li>
                 <li class="divider"></li>
                 <li class="nav-header">Nav header</li>
@@ -53,7 +50,20 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>{{ HTML::link_to_action( 'category/add', 'Add' ) }}</li>
+                <li>{{ HTML::link_to_action( 'category', 'List all' ) }}</li>
+                <li class="divider"></li>
+                <li class="nav-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
           @endif
+
         </ul>
         
         @if( Auth::check() )

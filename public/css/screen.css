@@ -32,4 +32,4 @@ form#add-ticket textarea {
   width:100%;
 }
 
-label[for="category_id"] { clear:right;  border:1px solid red; }
+label[for="category_id"] { clear:right; }

@@ -6,12 +6,16 @@
 
 {{ Form::open() }}
 
-<p>{{ Form::label('name', 'Name') }}<br />
-{{ Form::text('name', Input::old('name')) }}
+  {{ Form::label('name', 'Name') }}
+  {{ Form::text('name', Input::old('name')) }}
 
-<p>Assign category: {{ Form::select( 'category_id', $categories, Input::old('category_id') ) }}</p>
+  {{ Form::label('category_id', 'Assign category:') }}
+  {{ Form::select( 'category_id', $categories, Input::old('category_id') ) }}
 
-<p>{{ Form::submit('Add Group') }}</p>
+  <p>{{ Form::submit('Add Group', array( 'class' => 'btn btn-medium btn-primary' ) ) }}
+    {{ HTML::link('group', 'Cancel', array( 'class' => 'btn btn-medium btn-warning' ) ) }}</p>
+
+  </p>
 
 {{ Form::close() }}
 

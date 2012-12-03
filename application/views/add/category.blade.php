@@ -11,7 +11,7 @@
 
 <p>Assign group: {{ Form::select( 'group_id', $groups, Input::old('group_id') ) }}</p>
 
-<p>{{ Form::submit('Add Category') }}</p>
+  <p>{{ Form::submit('Add Category', array( 'class' => 'btn btn-medium btn-primary' ) ) }}</p>
 
 {{ Form::close() }}
 

@@ -35,7 +35,7 @@
   {{ Form::label('priority', 'Priority') }}
   {{ Form::select( 'priority', $priority, Input::old('priority', 'normal') ) }}
 
-  <p>{{ Form::submit('Add Ticket', array( 'class' => 'btn btn-medium btn-primary' )) }}</p>
+  <p>{{ Form::submit( 'Add Ticket', array( 'class' => 'btn btn-medium btn-primary' ) ) }}</p>
 
 </fieldset>
 {{ Form::close() }}
