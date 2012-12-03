@@ -1,0 +1,35 @@
+#status {
+  padding:10px;
+  text-align:center;
+  background-color:#eee;
+  border:2px solid #ccc;
+}
+
+#logout { float:right; } 
+
+ul#top-navigation { margin:0; padding:0; }
+
+ul#top-navigation li {
+  display:inline-block;
+  border:1px solid #ccc;
+  text-align: center;
+  list-style-type:none;
+  width:15%;
+  background-color:#eee;
+}
+
+ul#top-navigation li a:link, ul#top-navigation a:visited { 
+  display:block; 
+  padding:7px; 
+}
+
+ul#top-navigation li a:hover {
+  background-color:#ff7;
+  padding:7px;
+}
+
+form#add-ticket textarea {
+  width:100%;
+}
+
+label[for="category_id"] { clear:right;  border:1px solid red; }
