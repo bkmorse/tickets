@@ -70,7 +70,7 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => '127.0.0.1',
-			'database' => 'howdy',
+			'database' => 'dowdy',
 			'username' => 'ticket_user',
 			'password' => '12301980',
 			'charset'  => 'utf8',
