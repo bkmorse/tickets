@@ -1,3 +1,5 @@
+application/config/database.php
+
 # Numerous always-ignore extensions
 *.diff
 *.err
