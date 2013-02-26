@@ -19,6 +19,7 @@
     <!--{{ Form::select('category_id', $categories, Input::old('category_id', $group->category_id) ) }}-->
     {{ $group->category_name }}
   </td>
+
 </tr>
 @endforeach
 </tbody>

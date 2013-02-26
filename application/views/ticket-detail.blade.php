@@ -13,6 +13,10 @@
 
   <p>Status: {{ Form::select( 'status', $status, Input::old('status', $ticket->status) ) }}</p>
 
+  @if($ticket->upload->name)
+    <p>{{ HTML::link_to_action( 'download/index/' . $ticket->upload->id, $ticket->upload->name ) }}</p>
+  @endif
+
   <p>Submitted by: {{ $user->first_name }} {{ $user->last_name }} on {{ date( "M j, Y g:m:i a", strtotime( $ticket->created_at ) ) }}</p>
 
   <p>{{ Form::submit('Update ticket',  array( 'class' => 'btn btn-medium btn-primary' ) ) }}</p>

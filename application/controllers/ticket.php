@@ -50,26 +50,26 @@ class Ticket_Controller extends Base_Controller {
 
   public function get_index()
   {
-    $data['tickets'] = Ticket::order_by('created_at', 'desc')->get();
+    $data['tickets'] = Ticket::order_by('status', 'desc')->order_by('created_at', 'desc')->get();
     return View::make('ticket-dashboard', $data);
   }
 
-  public function get_view($ticket_id)
+  public function get_edit($ticket_id)
   {
     $data['ticket'] = Ticket::find($ticket_id);
     $data['user'] = Ticket::user_who_added_ticket($ticket_id);
     $data['status'] = array('open' => 'open', 'closed' => 'closed');
+    $data['user'] = Ticket::user_who_added_ticket($ticket_id);
     return View::make('ticket-detail', $data);
-    $user = Ticket::user_who_added_ticket($ticket_id);
   }
 
-  public function post_view($ticket_id)
+  public function post_edit($ticket_id)
   {
     $ticket = Ticket::find($ticket_id);
     $ticket->status = Input::get('status');
     $ticket->save();
 
-    return Redirect::to('ticket/view/'.$ticket_id)->with('status', 'Ticket updated');
+    return Redirect::to('ticket/edit/'.$ticket_id)->with('status', 'Ticket updated');
   }
 
   public function get_add()

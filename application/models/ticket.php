@@ -21,6 +21,11 @@ class Ticket extends Eloquent {
     Ticket::upload_file($Ticket->id);
   }
 
+  public function upload()
+  {
+    return $this->has_one('Upload');
+  }
+
   public static function upload_file($ticket_id)
   {
     $upload = Input::file('file');
@@ -39,6 +44,11 @@ class Ticket extends Eloquent {
     ->left_join('tickets', 'users.id', '=', 'tickets.user_id')
     ->where('tickets.id', '=', $ticket_id)
     ->first();
+  }
+
+  public static function array_value()
+  {
+    return array('howdy' => 'ho');
   }
 
 }

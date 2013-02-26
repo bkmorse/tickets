@@ -71,7 +71,7 @@ Route::post('login', function() {
     $user = User::where('email', '=', Input::get('username'))->first();
     Session::put('user_id', $user->id);
     Session::put('is_admin', $user->admin);
-    return Redirect::to('user/add');
+    return Redirect::to('ticket');
   else:
     return Redirect::to('login')->with('login_errors', true);
   endif;
@@ -89,10 +89,7 @@ Route::get('login', function () {
 // END LOGIN
 
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+Route::get('/', 'home@dashboard');
 
 /*
 |--------------------------------------------------------------------------

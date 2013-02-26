@@ -10,6 +10,7 @@
   <th>Subject</th>
   <th>Description</th>
   <th>Added</th>
+  <th>Priority</th>
   <th>Status</th>
   <th></th>
 </tr>
@@ -21,7 +22,8 @@
   <td>{{ Str::words( $ticket->description, 10 ) }}</td>
   <td>{{ date("M j, Y", strtotime( $ticket->created_at ) ) }}</td>
   <td>{{ $ticket->status }}</td>
-  <td>{{ HTML::link( 'ticket/view' . $ticket/->id, '', array( 'class' => 'icon-edit' ) ) }}</td>
+  <td>{{ $ticket->priority }}</td>
+  <td>{{ HTML::link( 'ticket/view/' . $ticket->id, '', array( 'class' => 'icon-edit' ) ) }}</td>
 </tr>
 @endforeach
 </tbody>
